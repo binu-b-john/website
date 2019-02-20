@@ -1,3 +1,91 @@
+<!doctype>
 <html>
-  hello world
-</html>
+<head>
+
+<style>
+.divTable{ 	
+display: table; 	
+width: 50%; } 
+
+.TableRowHead { 
+background-color: #FFFF00;	
+display: table-row;
+font-weight: bold;
+ } 
+
+.divTableRow { 	
+display: table-row;
+ } 
+
+.divTableHeading { 	
+background-color: #EEE; 	
+display: table-header-group; 
+font-weight: bold;} 
+
+.divTableCell, .divTableHead { 	
+border: 5px solid #999999; 	
+display: table-cell; 	
+padding: 10px ; } 
+
+.divTableCell1 { 	
+border: 5px solid #999999; 	
+display: table-cell; 	
+padding: 10px ; }
+
+.span{
+border: 5px solid #999999; 	
+display: table-cell; 	
+padding: 10px ;
+column-span: all;} 
+
+
+.divTableBody { 
+text-align:center;	
+display: table-row-group; }
+
+</style>
+
+
+</head>
+
+<div class="divTable"> 
+<div class="divTableBody">
+
+
+	<div class="TableRowHead" > 
+	<div class="divTableCell">First Name</div> 
+	<div class="divTableCell">Last Name</div> 
+	<div class="divTableCell">E-Mail</div> 
+	<div class="divTableCell">Phone Number</div> 
+	</div> 
+
+	<div class="divTableRow" style="color:red"> 
+	<div class="divTableCell" style="color:lightgrey"><del>Binu</del></div>				<!deleted text>
+	<div class="divTableCell">John</div> 
+	<div class="divTableCell"><i>binu@gmail.com</i></div>						<!italic> 
+	<div class="divTableCell">4389309300</div> 
+	</div> 
+
+	<div class="divTableRow" style="font-family:courier ; background-color: #EEE">			<!multiple inline style syntax >
+	<div class="divTableCell"><mark>Mark</mark></div> 						<!mark the word>	
+	<div class="divTableCell"><span style="background-color: #FFFFFF">Twain</span></div> 		<!mark with span>
+	<div class="divTableCell"><strong>mark@twain.com</strong></div> 				<!strong and bold do same>
+	<div class="divTableCell">5149559900</div> 
+	</div> 
+
+	<div class="divTableRow" > 
+	<div class="divTableCell">Mario</div> 
+	<div class="divTableCell"><sub>Gonsalez</sub></div> 
+	<div class="divTableCell"><sup>mario@mario.com</sup></div> 
+	<div class="divTableCell"><em>5142232233</em></div>						<!emphasis and italic do same?>
+	</div> 
+
+	<div class="divTableRow" > 
+	<div class="span">this is a full row thrzdsvzdvzvzvzvzv</div> 
+	</div> 
+
+													<! how to use colspan and rowspan
+
+</div>
+</div>
+</hml>
