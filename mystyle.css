@@ -4,7 +4,7 @@ display: table;
 width: 50%; } 
 
 .TableRowHead { 
-background-color: rgba(255, 255, 255, 0.62);	
+background-color: rgba(255, 255, 0, 0.62);	
 display: table-row;
 font-weight: bold;
  } 
