@@ -1,11 +1,16 @@
 
-.divTable{ 	
-display: table;
-align: center; 	
-width: 50%; } 
+.divTable{ 
+
+  border: 5px solid white; 
+  border-radius: 5px; 
+  margin: auto; 
+  text-align: center;	
+  display: table; 	
+  width: 50%; } 
 
 .TableRowHead { 
-background-color: #FFFF000.5;	
+text-align: center;
+background-color: #FFFF00;	
 display: table-row;
 font-weight: bold;
  } 
@@ -19,7 +24,10 @@ background-color: #EEE;
 display: table-header-group; 
 font-weight: bold;} 
 
+
+
 .divTableCell, .divTableHead { 	
+text-align: center;
 border: 5px solid #999999; 	
 display: table-cell; 	
 padding: 10px ; } 
@@ -29,6 +37,17 @@ border: 5px solid #999999;
 display: table-cell; 	
 padding: 10px ; }
 
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+input{
+   text-align:center;
+}
+
+
+/*
 .span{
 border: 5px solid #999999; 	
 display: table-cell; 	
@@ -40,5 +59,4 @@ column-span: all;}
 text-align:center;	
 display: table-row-group; }
 
-
-
+*/
