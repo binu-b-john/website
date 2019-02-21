@@ -6,7 +6,12 @@
   margin: auto; 
   text-align: center;	
   display: table; 	
-  width: 50%; } 
+  width: 50%; 
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 500px;
+  margin-left: 300px;
+  } 
 
 .TableRowHead { 
 text-align: center;
@@ -28,12 +33,12 @@ font-weight: bold;}
 
 .divTableCell, .divTableHead { 	
 text-align: center;
-border: 5px solid #999999; 	
+border: 5px none; 	
 display: table-cell; 	
 padding: 10px ; } 
 
 .divTableCell1 { 	
-border: 5px solid #999999; 	
+border: 5px none; 	
 display: table-cell; 	
 padding: 10px ; }
 
@@ -43,6 +48,7 @@ padding: 10px ; }
 }
 
 input{
+   align:center;
    text-align:center;
 }
 

@@ -3,10 +3,19 @@
 <head>
 <title>Registration Form</title>
 <link rel="stylesheet" type="text/css" href="css_registration.css">
-
+<style>
+div {
+  background-color: #D8D8D8;
+  
+  border: 10px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+</style>
 
 </head>
 
+<body>
 <div class="divTable"> 
 <div class="divTableBody">
 <form action="/action_page.php" autocomplete="on">
@@ -37,6 +46,25 @@
 	<div class="divTableCell"> Postal Code</div> 
 	<div class="divTableCell"><input type="text" name="Postal" placeholder="A0A 0A0" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"></div> 
 	</div> 
+	
+	<div class="divTableRow" > 
+	<div class="divTableCell">Contact Numner </div>
+    	<div class="divTableCell"><input type="tel"  placeholder="000-000-0000" pattern=".{10,}" ></div>
+	</div>
+
+	<div class="divTableRow" > 
+	<div class="divTableCell">Email </div>
+    	<div class="divTableCell"><input type="email"  placeholder="user@domain" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></div>
+	</div>
+	 
+
+	<div class="divTableRow" > 
+	<div class="divTableCell"> Sex </div> 
+	<div class="divTableCell"> <input type="radio" name="gender" value="male" > Male   
+        <input type="radio" name="gender" value="female"> Female 
+        <input type="radio" name="gender" value="other"> Other </div>
+	</div>
+
 
 
 
@@ -69,5 +97,5 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
 }
 </script>
-
+</body>
 </hml>
