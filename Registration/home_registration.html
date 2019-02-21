@@ -65,9 +65,22 @@ div {
         <input type="radio" name="gender" value="other"> Other </div>
 	</div>
 
+	<div class="divTableRow" > 
+	<div class="divTableCell"> Language </div>
+	<div class="divTableCell"><input list="Language" name="Language">
+  	<datalist id="Language">
+  	  <option value="English">
+    	  <option value="French">
+    	  <option value="Spanish">
+   	  <option value="Other"></div>
+	</div>
 
 
-
+	<div class="divTableRow" > 
+	<div class="divTableCell"> Password </div>
+    	<div class="divTableCell"> <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"</div>
+	</div>
+	</div>
 	<input type="submit">
 													
 </form>
