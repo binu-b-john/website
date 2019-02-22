@@ -23,38 +23,38 @@ div {
 	<!--<div class="TableRowHead" > -->
 	<div class="divTableRow" > 
 	<div class="divTableCell">Full Name</div> 
-	<div class="divTableCell"><input type="text" name="F_name" placeholder="First name" required></div> 
-	<div class="divTableCell"><input type="text" name="L_name" placeholder="Last name" required></div> 
+	<div class="divTableCell"><input type="text"  style="background-color:rgba(137, 137, 137,0.45)" name="F_name" placeholder="First name" required></div> 
+	<div class="divTableCell"><input type="text" style="background-color:rgba(137, 137, 137,0.45)"name="L_name" placeholder="Last name" required></div> 
 	</div> 
 
 	<div class="divTableRow" > 
 	<div class="divTableCell">Address</div> 
-	<div class="divTableCell"><input type="text" name="addr_l1" placeholder="Line 1" required></div> 
+	<div class="divTableCell"><input type="text" style="background-color:rgba(137, 137, 137,0.35)"name="addr_l1" placeholder="Line 1" required></div> 
 	</div> 
 
 	<div class="divTableRow" > 
 	<div class="divTableCell"></div> 
-	<div class="divTableCell"><input type="text" name="addr_l2" placeholder="Line 2" ></div> 
+	<div class="divTableCell"><input type="text" style="background-color:rgba(137, 137, 137,0.25)"name="addr_l2" placeholder="Line 2" ></div> 
 	</div> 
 
 	<div class="divTableRow" > 
 	<div class="divTableCell"> City </div> 
-	<div class="divTableCell"><input type="text" name="City" placeholder="City" ></div> 
+	<div class="divTableCell"><input type="text" style="background-color:rgba(137, 137, 137,0.15)"name="City" placeholder="City" ></div> 
 	</div> 
 
 	<div class="divTableRow" > 
 	<div class="divTableCell"> Postal Code</div> 
-	<div class="divTableCell"><input type="text" name="Postal" placeholder="A0A 0A0" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required></div> 
+	<div class="divTableCell"><input type="text" style="background-color:rgba(137, 137, 137,0.10)"name="Postal" placeholder="A0A 0A0" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required></div> 
 	</div> 
 	
 	<div class="divTableRow" > 
 	<div class="divTableCell">Contact Numner </div>
-    	<div class="divTableCell"><input type="tel"  placeholder="000-000-0000" pattern=".{10,}" required></div>
+    	<div class="divTableCell"><input type="tel"  style="background-color:rgba(137, 137, 137,0.15)"placeholder="000-000-0000" pattern=".{10,}" required></div>
 	</div>
 
 	<div class="divTableRow" > 
 	<div class="divTableCell">Email </div>
-    	<div class="divTableCell"><input type="email"  placeholder="user@domain" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></div>
+    	<div class="divTableCell"><input type="email"  style="background-color:rgba(137, 137, 137,0.25)"placeholder="user@domain" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></div>
 	</div>
 	 
 
@@ -68,12 +68,12 @@ div {
 
 	<div class="divTableRow" >
 	<div class="divTableCell"> Birthday </div>
-	<div class="divTableCell"><input type="date" name="bday" max="2000-02-22" required></div>
+	<div class="divTableCell"><input type="date" style="background-color:rgba(137, 137, 137,0.35)"name="bday" max="2000-02-22" required></div>
 	</div>
 
 	<div class="divTableRow" > 
 	<div class="divTableCell"> Language </div>
-	<div class="divTableCell"><input list="Language" name="Language">
+	<div class="divTableCell"><input list="Language" style="background-color:rgba(137, 137, 137,0.45)"name="Language">
   	<datalist id="Language">
   	  	<option value="English">
     	<option value="French">
@@ -126,11 +126,11 @@ function drop(ev) {
 }
 
 
-myFunction(ev){
+/*myFunction(ev){
 ev.dataTransfer.setData("text", ev.target.id);
 var data = ev.dataTransfer.getData("text");
 ev.target.appendChild(document.getElementById(data));
-}
+}*/
 </script>
 
 <div class="divTableRow" > 
@@ -142,7 +142,7 @@ ev.target.appendChild(document.getElementById(data));
 
 
 
-<button id="drag1" src="steve.png" onclick="myFunction(event)">Click me</button>
+<!--button id="drag1" src="steve.png" onclick="myFunction(event)">Click me</button>-->
 
 
 
