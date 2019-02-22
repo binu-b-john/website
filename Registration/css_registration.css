@@ -38,18 +38,28 @@ display: table-cell;
 padding: 10px ; } 
 
 .divTableCell1 { 	
-border: 5px none; 	
-display: table-cell; 	
-padding: 10px ; }
+border: 5px solid; 	
+display: table-cell;
+ }
 
+select{
+align:center;
+text-align:center;
+width: 165px;
+height: 23px;
+}
 
 ::-webkit-input-placeholder {
    text-align: center;
 }
 
 input{
-   align:center;
-   text-align:center;
+  align:center;
+  text-align:center;
+}
+
+sz{
+  font-size:10px;
 }
 
 
