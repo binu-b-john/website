@@ -43,7 +43,7 @@ li input{
   display: block;
   border: solid rgba(224, 224, 224,0.8);
   border-radius: 10px;
-  box-shadow: 1px 7px rgba(224, 224, 224,0.6);
+  box-shadow: 1px 3px rgba(224, 224, 224,0.6);
   width:300px;
   font-weight: 500;
   font-size: 15px;
