@@ -37,10 +37,22 @@ li a {
   
 }
 
+li input{
+
+  padding: 20px 20px;
+  display: block;
+  border: solid rgba(224, 224, 224,0.8);
+  border-radius: 10px;
+  box-shadow: 1px 7px rgba(224, 224, 224,0.6);
+  width:300px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
 
 li img {
-
-  margin-top: 10px;
+  padding-right: 20px;
+  padding-top: 20px;
   display: block;
   color: black;
  
@@ -57,5 +69,5 @@ li a:hover {
 hr{
 
 	border-color: solid grey;
-	margin-top: 0px;
+padding-top: 2px;
 }
