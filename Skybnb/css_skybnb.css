@@ -22,22 +22,22 @@ li {
 li a {
  
   margin: 7px 5px 10px 5px;
-	border: 5px solid transparent;
+	border-bottom: 3px solid transparent;
   padding: 30px 20px 30px 20px;
   display: block;
   color: black;
   
   font-weight: 400;
   font-size: 15px;
-  
-  
+   
+  transition: border-bottom 0.5s ;
 }
 
 li a:hover {
   
    
-   transition-duration: 1s;
-   border-bottom: 5px solid red;
+   transition: 0.5s;   /*--transition: <property> <duration> <timing-function> <delay>;*/
+   border-bottom: 3px solid black;
    color:#fc1144;
 }
 
@@ -170,6 +170,7 @@ font-weight: bold;}
   height :400px;
   border: 2px solid rgba(224, 224, 224,0.8);
   padding: 300px 2% 25px;
+  text-decoration: none;
 
 
 } 
@@ -184,7 +185,7 @@ font-weight: bold;}
     url(images/rec1.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  
+
   
 }
 
@@ -239,4 +240,9 @@ font-weight: bold;}
   background-size: 100% 100%;
   
   
+}
+
+a{
+
+     text-decoration: none;
 }
