@@ -1,0 +1,82 @@
+table{
+ font-family: arial;
+ border: 2px solid white;
+}
+
+th{
+
+	font-size: 150%;
+}
+tr {
+	border-bottom: 1px solid grey;
+	height:30px;
+
+}
+tr#no_border{
+	border-bottom: 1px solid transparent;
+	
+}
+
+td#align_left{
+	text-align: left;
+}
+
+
+td#smal_align_left{
+	text-align: left;
+	font-size: 75%;
+	font-variant: small-caps;
+
+}
+
+td#smal_align_center{
+	text-align: center;
+	font-size: 25%;
+	font-variant: small-caps;
+}
+
+td#big_align_left{
+	text-align: left;
+	font-size: 125%;
+}
+
+td#big_align_rigt{
+	text-align: right;
+	font-size: 125%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 500px;
+  margin: 5vw 35vw;
+  color: white;
+}
+
+th {
+  height: 50px;
+}
+
+
+html, body {
+  background-color: rgb(0, 8, 22);
+  margin: 0; padding: 0;
+}
+.hero-bkg-animated {
+  background: url(night_sky_1.jpg) repeat 0 0;
+  width: 500px;
+  margin: 5vw 35vw;
+  text-align: center;
+  height: 10%;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 100s linear infinite;
+}
+
+.hero-bkg-animated h1 {
+  font-family: sans-serif;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
