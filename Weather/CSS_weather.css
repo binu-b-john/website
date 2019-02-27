@@ -13,19 +13,24 @@ th{
 tr {
 	border-bottom: 1px solid grey;
 	height:30px;
-	
-
 }
+
+td{
+
+	width: 55px;
+	text-align: left;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 tr#no_border{
 	border-bottom: 1px solid transparent;
  	
-
-	
 }
 
 td#align_left{
 	text-align: left;
-	padding-left: 10px;
+	padding-left: 15px;
 }
 
 
@@ -33,7 +38,7 @@ td#smal_align_left{
 	text-align: left;
 	font-size: 75%;
 	font-variant: small-caps;
-	padding-left: 10px;
+	padding-left: 15px;
 }
 
 td#smal_align_center{
@@ -45,7 +50,7 @@ td#smal_align_center{
 td#big_align_left{
 	text-align: left;
 	font-size: 125%;
-	padding-left: 10px;
+	padding-left: 15px;
 }
 
 td#big_align_rigt{
