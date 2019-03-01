@@ -246,3 +246,87 @@ a{
 
      text-decoration: none;
 }
+
+
+.divTableCell3{
+  box-shadow: 1px 3px rgba(224, 224, 224,0.6);  
+  display: table-cell; 
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  max-width :100%;
+  height :auto;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid rgba(224, 224, 224,0.8);
+  padding: 300px 2% 25px;
+  text-decoration: none;
+
+
+} 
+
+.divTableCell3#rec6{
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(images/rec1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  
+}
+
+.divTableCell3#rec7{
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(images/rec2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  
+}
+
+
+.divTableCell3#rec8{
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(images/rec3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  
+}
+
+.divTableCell3#rec9{
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(images/rec4.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  
+}
+
+.divTableCell3#rec10{
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(images/rec5.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+  
+}
