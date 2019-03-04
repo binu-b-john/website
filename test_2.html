@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+div.main_background {
+	background-image: url(rec7.jpg);
+	background-repeat: no-repeat;
+	height: 100%;
+	width: auto;
+	transform: translate(0px, 0px);
+  	background-position: center;
+}
+div.background {
+	display: block;
+	right:0;
+  
+}
+div.background#image1 {
+	transform: translate(10px, 40%);
+	background-position: -2px -2px;
+	width: 20%;
+	border: 2px solid transparent;
+	background: url(rec6.jpg) no-repeat;
+	background-size: 600px 150px;
+
+}
+div.background#image2 {
+	transform: translate(10px, 40%);
+	background-position: -2px -2px;
+	width: 20%;
+	border: 2px solid transparent;
+	background: url(rec7.jpg) no-repeat;
+	background-size: 600px 150px;
+}
+
+div.transbox {
+  margin: 30px;
+  border: 1px solid transparent;
+  background-color: rgba(200, 200, 200,0.2);
+  color: rgb(250, 250, 250);
+  text-shadow: 1px 1.1px #000000;
+  filter: alpha(opacity=20); /* For IE8 and earlier */
+  transition-duration: 0.3s; 
+}
+
+
+.transbox:hover{
+	background-color: rgba(196, 196, 196,0.4);
+	transition-duration: 0.3s; 
+	border: 1px solid transparent;
+}
+
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  
+}
+
+
+
+.image-blurred-edge {
+    background-image: url('http://lorempixel.com/200/200/city/9');
+    width: 200px;
+    height: 200px;
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 8px 8px 8px white inset;
+}
+
+
+</style>
+</head>
+<body>
+<div class="main_background">
+<div class="background" id="image1">
+  <div class="transbox">
+    <p>This is some text that is placed in the transparent box.</p>
+  </div>
+</div>
+
+<div class="background" id="image2">
+  <div class="transbox">
+    <p>This is some text that is placed in the transparent box 2.</p>
+  </div>
+</div>
+
+</div>
+
+
+</body>
+</html>

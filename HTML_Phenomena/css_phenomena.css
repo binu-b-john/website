@@ -107,10 +107,11 @@ p {
 	text-align: center;
 	color: white;
   margin-top: 0px;
-    margin-bottom:55px;
+  margin-bottom:55px;
   margin-right: 335px;
-    margin-left: 335px;
-  }
+  margin-left: 335px;
+
+}
     
 
 h3 {
@@ -123,6 +124,7 @@ h3 {
   	margin-bottom: 100px;
    
 }
+
 h3 a{
 text-decoration: none;
   color: white;
