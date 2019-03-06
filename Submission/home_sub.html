@@ -29,7 +29,7 @@ input[type=text], select {
 }
 
 
-input[type=text]:focus {
+input[type*="ex"]:focus {
   width: 50%;
   background-color: lightgrey;
   color: white;
@@ -42,7 +42,7 @@ select:focus {
 
 }
 
-input[type=submit] {
+input[type$="mit"] {
   width: 230px;
   background-color: #4CAF50;
   color: white;
@@ -56,7 +56,7 @@ input[type=submit] {
   
 }
 
-input[type=submit]:hover {
+input[type^="sub"]:hover {
   background-color: #45a049;
    width: 50%;
 }
@@ -86,7 +86,7 @@ div.cube:hover {
 </style>
 <body>
 
-<h3>Submission Form</h3>
+<h3 style="text-align: center">Submission Form</h3>
 <div class="back">
 <div>
   <form action="/action_page.php">
