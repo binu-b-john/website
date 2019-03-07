@@ -97,36 +97,27 @@ h1 {
 	text-align: center;
 	font-size: 425%;
 	color: white;
-  	margin-top: 150px;
-  	margin-bottom: 25px;
+
+    margin: 150px 335px 25px 335px;
 }
-p {	
-	
+.content {	
+  display: table;
+	min-width: 400px;
+
 	font-family: arial;
 	font-weight: 100;
 	text-align: center;
 	color: white;
-  margin-top: 0px;
-  margin-bottom:55px;
-  margin-right: 335px;
-  margin-left: 335px;
+  margin: 0px 335px 55px ;
 
 }
-    
 
-h3 {
-   display: block;
- 
-  text-align: center;
-  font-family: arial;
-	
-  	margin-top: 20px;
-  	margin-bottom: 100px;
-   
-}
 
-h3 a{
+.order_button a{
+  display: table;
+  min-width: 200px;
 text-decoration: none;
+font-family: arial;
   color: white;
   font-weight: 150%;
   font-size: 75%;
@@ -135,10 +126,13 @@ text-decoration: none;
   text-align: center;
   background-color:#ff1c67;
   border: 1px solid #ff1c67;
+  margin: auto;
   
 }
 
-h3 a:hover{
+
+.order_button a:hover{
+margin: 20px 335px 100px 335px;
 background-color:#fc1144;
 border: 1px solid #fc1144;
 transition-duration: 1s;
