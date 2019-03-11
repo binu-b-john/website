@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css_test.css">
+
+</head>
+<body>
+
+<div class="divTable">
+
+
+	<div class="divCell" id="c1">
+		<div id="rem1"><img id="pic1" src="rec1.jpg" ></div>
+		<button class="b1" type="button" onclick="myFunction1()">Next Picture!</button>
+		<button class="b1" type="button" onclick="myFunction3()">Remove Picture!</button>
+	</div>
+
+
+	<div class="divCell" id="c2">
+		<div id="rem2"><img id="pic2" src="rec2.jpg" ></div>
+		<button class="b2" type="button" onclick="myFunction2()">Next Picture!</button>
+		<button class="b1" type="button" onclick="myFunction4()">Remove Picture!</button>
+	</div>
+		
+</div>
+
+
+<script src="js_test.js"></script>
+
+<script>
+	function myFunction3(){
+		document.getElementById("rem1").innerHTML = "image removed";
+	}
+
+	function myFunction4(){
+		document.getElementById("rem2").innerHTML = "image removed";
+	}
+
+
+</script>
+</body>
+</html>

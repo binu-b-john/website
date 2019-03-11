@@ -1,0 +1,46 @@
+body{
+	background-color: black;
+}
+
+
+.divTable{
+	border: 2px solid white ;
+	border-radius: 10px;
+	display: table;
+	margin:auto;
+
+
+}
+
+.divCell{
+
+	display:inline-block;
+	border: 2px solid white ;
+	margin:10px;
+	border-radius: 10px;
+}
+
+.b1, .b2{
+
+	display:block;
+	border:2px solid red;
+	background-color: black;
+	border-radius: 12%;
+	color: red;
+	margin:20px auto;
+
+}
+
+.divCell#c1, .divCell#c2 {
+
+	
+}
+
+#pic1, #pic2, #rem1, #rem2{
+	
+	text-align: center;
+	color:white;
+	width: 400px;
+	height: 640px;
+	border-radius: 10px 10px 0 0 ;
+}
