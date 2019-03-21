@@ -1,6 +1,9 @@
-function myFunction1() { 
-  document.getElementById("pic1").src = "rec3.jpg";
 
+
+function myFunction1() { 
+	x = 2;
+  	document.getElementById("pic1").src = "rec"+x+".jpg";
+  	x = x+1;
 }
 
 function myFunction2() { 

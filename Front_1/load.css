@@ -1,0 +1,57 @@
+
+.loaderIn {
+    text-align: center;
+    margin: 100px auto 0px;
+}
+.progress_heart{
+	width: 200px;
+   	margin: 0px auto;
+    position: relative;
+
+}
+
+
+span{
+	position: absolute;
+	margin:150px 90px;
+}
+
+
+.content_tab{
+	display: table;
+	margin: 20px auto 50px;
+}
+
+.headline{
+	display: table-row;
+	text-align: center;
+	font-size: 150%;
+	font-weight: 25%;
+	font-family: arial;
+	color:;
+}
+
+.content_line{
+	margin-top: 10px;
+	display: table-row;
+	text-align: center;
+	display: block;
+	font-size: 100%;
+	font-family: arial;
+	color:;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 20s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 1;
+  }
+}
