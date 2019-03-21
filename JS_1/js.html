@@ -39,9 +39,9 @@
 				<p id="demo2">Visit Microsoft and Microsoft!</p>
 				<button onclick="myFunction2()">Try it</button>
 			</div>
-		  	<div>
+		  	<div onmouseover="myFunction3()" onmouseout="myFunction4()">
 		  		<p id="demo3">Visit Microsoft and Microsoft!</p>
-				<button onclick="myFunction3()">Try it</button>
+				
 			</div>
 		  	<div>3</div>   
 		  	<div>3</div>
@@ -67,6 +67,11 @@
 			var str3 = document.getElementById("demo3").innerHTML; 
 			var txt3 = str3.replace(/MICROSOFT/gi,"W3Schools");
 			document.getElementById("demo3").innerHTML = txt3;
+		}
+		function myFunction4() {
+			var str4 = document.getElementById("demo3").innerHTML; 
+			var txt4 = "Visit Microsoft and Microsoft!";
+			document.getElementById("demo3").innerHTML = txt4;
 		}
 		</script>
 	</body>
