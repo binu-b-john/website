@@ -77,17 +77,52 @@
         		document.getElementById("table2").style.visibility = "hidden";
           }
           if(count == 6){
-          	document.getElementById("table2").style.visibility = "visible";
-          	document.getElementById("f_name").innerHTML = inputs[0];
-          	document.getElementById("l_name").innerHTML = inputs[1];
-          	document.getElementById("e_mail").innerHTML = inputs[2];
-          	document.getElementById("u_id").innerHTML = inputs[3];
-          	document.getElementById("p_word").innerHTML = inputs[4];
-          }
-        }
+          
+         	document.getElementById("myForm").submit();
+          	
+
+			// Storing data:
+			myObj = { name: inputs[0]+" "+inputs[1], email: inputs[2], userid: inputs[3] };
+			myJSON = JSON.stringify(myObj);
+			localStorage.setItem("testJSON", myJSON);
+			
+
+			
+		}
+	}	
+			function  showData(){
+
+			// Retrieving data:
+			text = localStorage.getItem("testJSON");
+			obj = JSON.parse(text);
+			
+				var str = "<table style=''>";
+				str+="<tr><td>Name</td><td> | </td><td>Email</td><td> | </td><td>UserID</td></tr>";
+				for(var i=0;i<2;i++)
+				{
+				str+="<tr>";
+				str+="<td>"+obj.name+"</td>";
+				str+="<td> | </td>";
+				str+="<td>"+obj.email+"</td>";
+				str+="<td> | </td>";
+				str+="<td>"+obj.userid+"</td>";
+
+				str+="</tr>";
+				}
+
+				str+="</table>";
+
+
+				document.getElementById("test").innerHTML = str
+				}
+
+
+          
+     
    </script>
 </head>
 <body>
+	<form id="myForm" action="">
 	<table id="table1">
       <tr>
         <td>First Name:</td>
@@ -119,40 +154,14 @@
         <td><input type="password" id="confirm" onkeyup="validate();"/></td>
         <td><div id="errConfirm"></div></td>
       </tr>
-      <tr>
-        <td><input type="button" id="create" value="Create" onclick="validate();finalValidate();"/></td>
-        <td><div id="errFinal"></div></td>
-      </tr>
+      
 	</table>
+</form>
+<button id="create" onclick="validate();finalValidate();"/>Submit</button>
+<div id="errFinal"></div>
+<button id="show" onclick="showData()"/>Show</button>
 
-	<table id="table2" style="visibility: hidden">
-      <tr>
-        <td>First Name:</td>
-        <td id="f_name"></td>
-        
-      </tr>
-      <tr>
-        <td>Last Name:</td>
-        <td id="l_name"></td>
-        
-      </tr>
-      <tr>
-        <td>Email:</td>
-        <td id="e_mail"></td>
-        
-      </tr>
-      <tr>
-        <td>User Id:</td>
-        <td id="u_id"></td>
-        
-      </tr>
-      <tr>
-        <td>Password:</td>
-        <td id="p_word"></td>
-        
-	</table>
-
-
+<div id="test"></div>
 
 </body>
 </html>
