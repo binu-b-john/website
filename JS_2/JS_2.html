@@ -151,13 +151,13 @@ function deleterow(str)
 {
 finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
 
+delete finalarr[str];
 
-
-for(var i=1;i<=(finalarr.length-(str+1));i++)
+for(var i=0;i<=(finalarr.length-(str+1));i++)
           {
-            delete finalarr[str];
-            finalarr[str] = finalarr[str+1];
-            str = str+1;
+            
+            finalarr[str+i] = finalarr[str+1+i];
+            
           }
 finalarr.pop();
 
