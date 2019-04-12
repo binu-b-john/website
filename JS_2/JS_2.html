@@ -11,10 +11,10 @@
     divs[5] = "errConfirm";
 	
 
+    var cur_index = 0;                                                    //golbal variable for passing index value for editing mode
 
-	
-function validate()
-	{
+
+function validate(){
       var inputs = [];
       inputs[0] = document.getElementById('first').value;
       inputs[1] = document.getElementById('last').value;
@@ -36,31 +36,35 @@ function validate()
         var div = divs[i];
         if (inputs[i] == "")
         	document.getElementById(div).innerHTML = errMessage;
-        else if (i==2)
-        {
+        else if (i==2){
           var atpos=inputs[i].indexOf("@");
           var dotpos=inputs[i].lastIndexOf(".");
-          if (atpos<1 || dotpos<atpos+2 || dotpos+2>=inputs[i].length)
-        	document.getElementById('errEmail').innerHTML = "<span style='color: red'>Enter a valid email address!</span>";
+          if(atpos<1 || dotpos<atpos+2 || dotpos+2>=inputs[i].length)
+        	 document.getElementById('errEmail').innerHTML = "<span style='color: red'>Enter a valid email address!</span>";
           else
-        	document.getElementById(div).innerHTML = "OK!";
+        	 document.getElementById(div).innerHTML = "OK!";
         }
-        else if (i==5)
-        {
+        else if (i==3){
+          
+          if (isNaN(inputs[i]) || inputs[i].length<10)
+           document.getElementById('errMn').innerHTML = "<span style='color: red'>Enter a valid Mobile number!</span>";
+          else
+           document.getElementById(div).innerHTML = "OK!";
+        }
+        else if (i==5){
           var first = document.getElementById('password').value;
           var second = document.getElementById('confirm').value;
           if (second != first)
-        	document.getElementById('errConfirm').innerHTML = "<span style='color: red'>Your passwords don't match!</span>";
+        	 document.getElementById('errConfirm').innerHTML = "<span style='color: red'>Your passwords don't match!</span>";
           else
-       		document.getElementById(div).innerHTML = "OK!";
+       		 document.getElementById(div).innerHTML = "OK!";
         }
         else
         	document.getElementById(div).innerHTML = "OK!";
        }
      }
 
-function finalValidate()
-        {
+function finalValidate(){
         	var inputs = [];
   	      inputs[0] = document.getElementById('first').value;
   	      inputs[1] = document.getElementById('last').value;
@@ -70,8 +74,7 @@ function finalValidate()
   	      inputs[5] = document.getElementById('confirm').value;
       
           var count = 0;
-          for(i=0;i<6;i++)
-          {
+          for(i=0;i<6;i++){
             var div = divs[i];
             if(document.getElementById(div).innerHTML == "OK!")
             count = count + 1;
@@ -91,16 +94,27 @@ function finalValidate()
           }
           ];
 
-          if(localStorage.getItem("arrayvalues")===null)
-          {
-          localStorage.setItem("arrayvalues",JSON.stringify(arrayvals));
+        if(cur_index != 0){                                                 //if editing mode is in progress
+          finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+          
+
+          finalarr.splice(cur_index,1,arrayvals[0]);                        //delete the row entry at cur_index and update with current entry
+          
+
+          localStorage.setItem("arrayvalues",JSON.stringify(finalarr));
+          cur_index = 0;                                                    //terminate edit mode
+        }
+
+        else if(cur_index == 0){                                            //if its not in editing mode 
+          if(localStorage.getItem("arrayvalues")===null){
+            localStorage.setItem("arrayvalues",JSON.stringify(arrayvals));
           }
-          else
-          {
-          getstorage_data = JSON.parse(localStorage.getItem("arrayvalues"));
-          finaldata = getstorage_data.concat(arrayvals);
-          localStorage.setItem("arrayvalues",JSON.stringify(finaldata));
+          else{
+            getstorage_data = JSON.parse(localStorage.getItem("arrayvalues"));
+            finaldata = getstorage_data.concat(arrayvals);
+            localStorage.setItem("arrayvalues",JSON.stringify(finaldata));
           }
+        }
           showData();
           
 				}
@@ -109,65 +123,77 @@ function finalValidate()
           
 function showData(){
 
-finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+          var str = "<table border='1'>";
 
-var str = "<table border='1'>";
-
+          if(!localStorage.getItem("arrayvalues")){
+            
+            str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Mobile Number</th><th>Actions</th></tr>";
+            str+="</table>";
+             document.getElementById("getdatahere").innerHTML = str;
+          }
+          else{
+            finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
           str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Mobile Number</th><th>Actions</th></tr>";
-
-          for(var i=0;i<finalarr.length;i++)
-          {
-          str+="<tr id='rowid"+i+"'>";
-          str+="<td>"+(i+1)+"</td>";
-          str+="<td>"+finalarr[i].fn+"</td>";
-          str+="<td>"+finalarr[i].ln+"</td>";
-          str+="<td>"+finalarr[i].ea+"</td>";
-          str+="<td>"+finalarr[i].mn+"</td>";
-          str+="<td><a href='#' onclick='return editthisrow("+i+")'>Edit</a> / <a href='#' onclick='return deleterow("+i+")'>Delete</a></td>";
-          str+="</tr>";
+          for(var i=0;i<finalarr.length;i++){
+            str+="<tr id='rowid"+i+"'>";
+            str+="<td>"+(i+1)+"</td>";
+            str+="<td>"+finalarr[i].fn+"</td>";
+            str+="<td>"+finalarr[i].ln+"</td>";
+            str+="<td>"+finalarr[i].ea+"</td>";
+            str+="<td>"+finalarr[i].mn+"</td>";
+            str+="<td><a href='#' onclick='return editthisrow("+i+")'>Edit</a> / <a href='#' onclick='return deleterow("+i+")'>Delete</a></td>";
+            str+="</tr>";
           }
 
           str+="</table>";
 
           document.getElementById("getdatahere").innerHTML = str;
+        }
 
 }
 
 
 
-function editthisrow(str)
-{
-finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+function editthisrow(str){
 
-document.getElementById("first").value = finalarr[str].fn;
-document.getElementById("last").value = finalarr[str].ln;
-document.getElementById("email").value = finalarr[str].ea;
-document.getElementById("mn").value = finalarr[str].mn;
+          document.getElementById("submit_btn").value = "EDIT";
 
-return false;
+          cur_index = str;                                            //storing the index to be edited as global variable
+
+          finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+          document.getElementById("first").value = finalarr[str].fn;
+          document.getElementById("last").value = finalarr[str].ln;
+          document.getElementById("email").value = finalarr[str].ea;
+          document.getElementById("mn").value = finalarr[str].mn;
+
+          return false;
 }
 
-function deleterow(str)
-{
-finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+function deleterow(str){
+          finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
 
-delete finalarr[str];
+          finalarr.splice(str,1);
 
-for(var i=0;i<=(finalarr.length-(str+1));i++)
-          {
-            
-            finalarr[str+i] = finalarr[str+1+i];
-            
-          }
-finalarr.pop();
+          /*delete finalarr[str];
 
-localStorage.setItem("arrayvalues",JSON.stringify(finalarr));
-showData();
-return false;
+          for(var i=0;i<=(finalarr.length-(str+1));i++)
+                    {
+                      
+                      finalarr[str+i] = finalarr[str+1+i];
+                      
+                    }
+          finalarr.pop();*/
+
+          localStorage.setItem("arrayvalues",JSON.stringify(finalarr));
+          showData();
+          return false;
 }
-   </script>
+    
+    </script>
+
+
 </head>
-<body>
+<body onload="showData()">
 	<form id="myForm" action="">
 	<table id="table1">
       <tr>
@@ -204,55 +230,14 @@ return false;
         <td><br></td>
       </tr>
       <tr>
-      <td><input type="button" name="submit_btn" value="SUBMIT" onclick="validate();finalValidate();"></td>
-      <td><input type="button" id="show" value="SHOW" onclick="showData()"></td>
+      <td><input type="button" id="submit_btn" value="SUBMIT" onclick="validate();finalValidate();"></td>
+      
       </tr>
 	</table>
 </form>
 
 <div id="getdatahere"></div>
 
-<script type="text/javascript">
-
-  
-  var len;
-  
-  var str = "<table border='1'>";
-
-  if(!localStorage.getItem("arrayvalues")){
-    len = 1;
-    str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Mobile Number</th><th>Actions</th></tr>";
-    str+="</table>";
-     document.getElementById("getdatahere").innerHTML = str;
-  }
-  else{
-    finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
-    len = finalarr.length;
-  
-
-
-          str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Mobile Number</th><th>Actions</th></tr>";
-
-
-
-          for(var i=0;i<len;i++)
-          {
-          str+="<tr id='rowid"+i+"'>";
-          str+="<td>"+(i+1)+"</td>";
-          str+="<td>"+finalarr[i].fn+"</td>";
-          str+="<td>"+finalarr[i].ln+"</td>";
-          str+="<td>"+finalarr[i].ea+"</td>";
-          str+="<td>"+finalarr[i].mn+"</td>";
-          str+="<td><a href='#' onclick='return editthisrow("+i+")'>Edit</a> / <a href='#' onclick='return deleterow("+i+")'>Delete</a></td>";
-          str+="</tr>";
-          }
-
-          str+="</table>";
-
-          document.getElementById("getdatahere").innerHTML = str;
-        }
-
-</script>
 
 </body>
 </html>
