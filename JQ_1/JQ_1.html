@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#a").click(function(){
+    $("#aa").toggle();
+  });
+});
+
+$(document).ready(function(){
+  $("#b").dblclick(function(){
+    $('#bb').toggle();
+  });
+});
+
+
+$(document).ready(function(){
+  $("#c").mouseenter(function(){
+    alert("mouse enter alert");
+  });
+});
+
+
+$(document).ready(function(){
+  $("#c").mouseleave(function(){
+    alert("Bye! Bye!");
+  });
+});
+
+$(document).ready(function(){
+  $("#d").mousedown(function(){
+    $(this).css("background-color", "red");
+  });
+  $("#d").mouseup(function(){
+    $(this).css("background-color", "");
+  });
+});
+
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+});
+</script>
+</head>
+<body>
+
+<!- event practice ->
+
+<button id="a">single click to hide</button><br>
+<p id="aa"> single click to hide and show this content</p><br>
+<button id="b">double click to hide</button><br>
+<p id="bb"> double click to hide and show this content</p><br>
+<button id="c">Enter and Leave</button><br><br>
+<button id="d">click me</button><br><br>
+
+<!- effect practice ->
+
+<button id="d">click me</button><br><br>
+
+</body>
+</html>
