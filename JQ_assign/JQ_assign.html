@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body onload="showData(1)">
+
+<div class="container">
+  <h2>Tabs</h2>
+ 
+  <ul class="nav nav-tabs">
+    <li class="active" id="admin_tab"><a data-toggle="tab" href="#admin">Admin details</a></li>
+    <li id="faculty_tab"><a data-toggle="tab" href="#faculty">Faculty Details</a></li>
+    <li id="student_tab"><a data-toggle="tab" href="#student">Student Details</a></li>
+    <li id="customer_tab"><a data-toggle="tab" href="#customer">Customer Details</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="admin" class="tab-pane fade in active">
+      <h3>ADMIN FORM</h3>
+      <form id="myForm1" action="">
+	  <table>
+	  <tr>
+	  <th>First name :</th><th><input type="text" id="first1" onkeyup="validate(1);"></th><th><div id="errFirst1"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Last name :</th><th><input type="text" id="last1" onkeyup="validate(1);"></th><th><div id="errLast1"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Email :</th><th><input type="text" id="email1" onkeyup="validate(1);"></th><th><div id="errEmail1"></div></th>
+	  </tr>
+	  <tr>
+	  <th></th><th><input type="button" value="NEXT" id="admin_next" onclick="validate(1);finalValidate(1);"><input type="button" value="Reset" id="admin_reset"></th>
+	  </tr>
+	  </table>
+	  </form><br>
+	  
+	  
+	  <div id="getdatahere1"></div>
+    </div>
+	
+	
+    <div id="faculty" class="tab-pane fade">
+      <h3>FACULTY FORM</h3>
+      <form id="myForm2" action="">
+	  <table>
+	  <tr>
+	  <th>First name :</th><th><input type="text" id="first2" onkeyup="validate(2);"></th><th><div id="errFirst2"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Last name :</th><th><input type="text" id="last2" onkeyup="validate(2);"></th><th><div id="errLast2"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Email :</th><th><input type="text" id="email2" onkeyup="validate(2);"></th><th><div id="errEmail2"></div></th>
+	  </tr>
+	  <tr>
+	  <th></th><th><input type="button" value="NEXT" id="faculty_next" onclick="validate(2);finalValidate(2);"><input type="button" value="Reset" id="faculty_reset"><input type="button" value="CANCEL" id="faculty_cancel"></th>
+	  </tr>
+	  </table>
+	  </form><br>
+	  
+	  
+	  <div id="getdatahere2"></div>
+    </div>
+    <div id="student" class="tab-pane fade">
+      <h3>STUDENT FORM</h3>
+      <form id="myForm3" action="">
+	  <table>
+	  <tr>
+	  <th>First name :</th><th><input type="text" id="first3" onkeyup="validate(3);"></th><th><div id="errFirst3"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Last name :</th><th><input type="text" id="last3" onkeyup="validate(3);"></th><th><div id="errLast3"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Email :</th><th><input type="text" id="email3" onkeyup="validate(3);"></th><th><div id="errEmail3"></div></th>
+	  </tr>
+	  <tr>
+	  <th></th><th><input type="button" value="NEXT" id="student_next" onclick="validate(3);finalValidate(3);"><input type="button" value="Reset" id="student_reset"><input type="button" value="CANCEL" id="student_cancel"></th>
+	  </tr>
+	  </table>
+	  </form><br>
+	  
+	  
+	 <div id="getdatahere3"></div>
+    </div>
+    <div id="customer" class="tab-pane fade">
+      <h3>CUSTOMER FORM</h3>
+      <form id="myForm4" action="">
+	  <table>
+	  <tr>
+	  <th>First name :</th><th><input type="text" id="first4" onkeyup="validate(4);"></th><th><div id="errFirst4"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Last name :</th><th><input type="text" id="last4" onkeyup="validate(4);"></th><th><div id="errLast4"></div></th>
+	  </tr>
+	  <tr>
+	  <th>Email :</th><th><input type="text" id="email4" onkeyup="validate(4);"></th><th><div id="errEmail4"></div></th>
+	  </tr>
+	  <tr>
+	  <th></th><th><input type="button" value="NEXT" id="customer_next" onclick="validate(4);finalValidate(4);"><input type="button" value="Reset" id="customer_reset"><input type="button" value="CANCEL" id="customer_cancel"></th>
+	  </tr>
+	  </table>
+	  </form><br>
+	  
+	  
+	  <table border="1" style="width:50%">
+	  <tr>
+	  <th>S.No</th><th>Name</th><th>Email</th><th>Actions</th>
+	  </tr> 
+	  <tr>
+	  <th></th><th></th><th></th><th>Edit/delete</th>
+	  </tr>
+	  </table>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+  $("#admin_next").click(
+  function(){
+    $("#admin, #admin_tab").removeClass("in active");
+    $("#faculty").addClass("in active");
+    $("#faculty_tab").addClass("active");
+  });
+
+  $("#faculty_next").click(function(){
+    $("#faculty, #faculty_tab").removeClass("in active");
+    $("#student").addClass("in active");
+    $("#student_tab").addClass("active");
+  });
+
+  $("#student_next").click(function(){
+    $("#student, #student_tab").removeClass("in active");
+    $("#customer").addClass("in active");
+    $("#customer_tab").addClass("active");
+  });
+
+  $("#faculty_cancel").click(function(){
+    $("#faculty, #faculty_tab").removeClass("in active");
+    $("#admin").addClass("in active");
+   	$("#admin_tab").addClass("active");
+  });
+
+  $("#student_cancel").click(function(){
+    $("#student, #student_tab").removeClass("in active");
+    $("#admin").addClass("in active");
+    $("#admin_tab").addClass("active");
+  });
+
+  $("#customer_cancel").click(function(){
+    $("#customer, #customer_tab").removeClass("in active");
+    $("#admin").addClass("in active");
+    $("#admin_tab").addClass("active");
+  });
+});
+</script>
+
+<script type="text/javascript">
+	var divs = new Array();
+    divs[0] = "errFirst";
+    divs[1] = "errLast";
+    divs[2] = "errEmail";
+  
+   var cur_index = 0;                                                    //golbal variable for passing index value for editing mode
+
+
+function validate(x){
+      var inputs = [];
+      inputs[0] = document.getElementById('first'+x).value;
+      inputs[1] = document.getElementById('last'+x).value;
+      inputs[2] = document.getElementById('email'+x).value;
+
+      var errors = [];
+      errors[0] = "<span style='color:red'>Please enter your first name!</span>";
+      errors[1] = "<span style='color:red'>Please enter your last name!</span>";
+      errors[2] = "<span style='color:red'>Please enter your email!</span>";
+      
+      for (i in inputs)
+      {
+        var errMessage = errors[i];
+        var div = divs[i]+x;
+        if (inputs[i] == "")
+        	document.getElementById(div).innerHTML = errMessage;
+        else if (i==2){
+          var atpos=inputs[i].indexOf("@");
+          var dotpos=inputs[i].lastIndexOf(".");
+          if(atpos<1 || dotpos<atpos+2 || dotpos+2>=inputs[i].length)
+        	 document.getElementById('errEmail'+x).innerHTML = "<span style='color: red'>Enter a valid email address!</span>";
+          else
+        	 document.getElementById(div).innerHTML = "OK!";
+        }
+        else
+        	document.getElementById(div).innerHTML = "OK!";
+       }
+     }
+
+
+function finalValidate(x){
+        	var inputs = [];
+  	      inputs[0] = document.getElementById('first'+x).value;
+  	      inputs[1] = document.getElementById('last'+x).value;
+  	      inputs[2] = document.getElementById('email'+x).value;
+      
+          var count = 0;
+          for(i=0;i<3;i++){
+            var div = divs[i]+x;
+            if(document.getElementById(div).innerHTML == "OK!")
+            count = count + 1;
+          }
+          if(count == 3){
+          
+         	document.getElementById("myForm"+x).submit();
+          	
+
+    			// Storing data:
+          var arrayvals = [
+          {
+    			fn:inputs[0],
+          ln:inputs[1],
+          ea:inputs[2],
+          }
+          ];
+
+        if(cur_index != 0){                                                 //if editing mode is in progress
+          
+          var ind = cur_index -1 ;
+          finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+          
+
+          finalarr.splice(ind,1,arrayvals[0]);                        //delete the row entry at cur_index and update with current entry
+          
+
+          localStorage.setItem("arrayvalues",JSON.stringify(finalarr));
+          cur_index = 0;                                                    //terminate edit mode
+        }
+
+        else if(cur_index == 0){                                            //if its not in editing mode 
+          if(localStorage.getItem("arrayvalues")===null){
+            localStorage.setItem("arrayvalues",JSON.stringify(arrayvals));
+          }
+          else{
+            getstorage_data = JSON.parse(localStorage.getItem("arrayvalues"));
+            finaldata = getstorage_data.concat(arrayvals);
+            localStorage.setItem("arrayvalues",JSON.stringify(finaldata));
+          }
+        }
+        showData(x);
+          
+				}
+
+}
+
+function showData(x){
+
+          var str = "<table border='1' style='width:50%'>";
+
+          if(!localStorage.getItem("arrayvalues")){
+            
+            str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Actions</th></tr>";
+            str+="</table>";
+             document.getElementById("getdatahere"+x).innerHTML = str;
+          }
+          else{
+            finalarr = JSON.parse(localStorage.getItem("arrayvalues"));
+          str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Actions</th></tr>";
+          for(var i=0;i<finalarr.length;i++){
+            str+="<tr id='rowid"+i+"'>";
+            str+="<td>"+(i+1)+"</td>";
+            str+="<td>"+finalarr[i].fn+"</td>";
+            str+="<td>"+finalarr[i].ln+"</td>";
+            str+="<td>"+finalarr[i].ea+"</td>";
+            str+="<td><a href='#' onclick='return editthisrow("+i+")'>Edit</a> / <a href='#' onclick='return deleterow("+i+")'>Delete</a></td>";
+            str+="</tr>";
+          }
+
+          str+="</table>";
+
+          document.getElementById("getdatahere"+x).innerHTML = str;
+        }
+}
+</script>
+
+</body>
+</html>
