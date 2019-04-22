@@ -154,9 +154,9 @@
   
 	function dispdata(tab)
 	{
-
 	if(!localStorage.getItem("localTable"+tab)){
 		document.getElementById("tabledata"+tab).innerHTML = "";
+		document.getElementsByClassName("table")[tab-1].innerHTML = ""; 
 	}
 
 	else{
@@ -183,13 +183,13 @@
 
 		full+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th></tr>";
 
-		for(var i=0;i<finalarr.length;i++)
+		for(var j=0;j<finalarr.length;j++)
 		{
-		full+="<tr id='rowid"+i+"'>";
-		full+="<td>"+(i+1)+"</td>";
-		full+="<td>"+finalarr[i].fn+"</td>";
-		full+="<td>"+finalarr[i].ln+"</td>";
-		full+="<td>"+finalarr[i].ea+"</td>";
+		full+="<tr id='rowid"+j+"'>";
+		full+="<td>"+(j+1)+"</td>";
+		full+="<td>"+finalarr[j].fn+"</td>";
+		full+="<td>"+finalarr[j].ln+"</td>";
+		full+="<td>"+finalarr[j].ea+"</td>";
 		full+="</tr>";
 		}
 
