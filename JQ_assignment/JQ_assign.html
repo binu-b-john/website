@@ -7,12 +7,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assign.css">
   
   <script>
 	
 	var cur_index = 0; 
 
   $(document).ready(function() {
+
+   $("[data-toggle='tooltip']").tooltip();
+
+  $(".tabledata .tablesearch").hover(
+  	function(){
+  	$(this).css("background-color","red"); 
+  	},
+  	function(){
+  	$(this).css("background-color","white")
+  	}
+  );
+
+   $(".searchdata").on("keyup",
+    function(){
+  		var dataentered = $(this).val().toLowerCase();
+	  	$(".tabledata .tablesearch").filter(function(){
+	  		$(this).toggle($(this).text().toLowerCase().indexOf(dataentered) > -1)
+  			});
+  	});
+
   //common form reset
   $(".resetform").click(function() {
   formid = this.id;
@@ -162,24 +184,26 @@
 	else{
 		finalarr = JSON.parse(localStorage.getItem("localTable"+tab));
 
-		var str = "<table border='1'>";
+		var str = "<table border='1' class='tabledata' style='width:50%'>";
 
-		str+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Actions</th></tr>";
+		str+= "<tr><th></th><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th><th>Actions</th></tr>";
 
 		for(var i=0;i<finalarr.length;i++)
 		{
-		str+="<tr id='rowid"+i+"'>";
+		str+="<tr class='tablesearch' id='rowid"+i+"'>";
+		str+="<td> <input type='checkbox' name='check"+i+"' value='check"+i+"'></td>";
 		str+="<td>"+(i+1)+"</td>";
 		str+="<td>"+finalarr[i].fn+"</td>";
 		str+="<td>"+finalarr[i].ln+"</td>";
 		str+="<td>"+finalarr[i].ea+"</td>";
-		str+="<td><a href='#' onclick='return editthisrow("+i+","+tab+")'>Edit</a> / <a href='#' onclick='return deleterow("+i+","+tab+")'>Delete</a></td>";
+		str+="<td><i class='fa fa-edit' data-toggle='tooltip' data-placement='bottom' title='Edit' onclick='return editthisrow("+i+","+tab+")'></i> / <i class='fa fa-trash' data-toggle='tooltip' data-placement='bottom' title='Delete' onclick='return deleterow("+i+","+tab+")'></i></td>";
+		
 		str+="</tr>";
 		}
 
 		str+="</table>";
 
-		var full = "<table border='1'>";
+		var full = "<table border='1'  class='tabledata' style='width:50%'>";
 
 		full+= "<tr><th>S.No</th><th>First Name</th><th>Last Name</th><th>Email ID</th></tr>";
 
@@ -354,7 +378,7 @@
 	  </table>
 	  </form><br>
 	  
-	  
+	  <input type="text" placeholder="search" class="searchdata"><br><br>
 	  <div id="tabledata1"> </div>
 	  
     </div>
@@ -379,7 +403,7 @@
 	  </table>
 	  </form><br>
 	  
-	  
+	  <input type="text" placeholder="search" class="searchdata"><br><br>
 	  <div id="tabledata2"> </div>
     </div>
 	
@@ -403,7 +427,7 @@
 	  </table>
 	  </form><br>
 	  
-	  
+	  <input type="text" placeholder="search" class="searchdata"><br><br>
 	  <div id="tabledata3"> </div>
     </div>
 	
@@ -427,7 +451,7 @@
 	  </table>
 	  </form><br>
 	  
-	  
+	  <input type="text" placeholder="search" class="searchdata"><br><br>
 	  <div id="tabledata4"> </div>
     </div>
 
