@@ -1,0 +1,70 @@
+body{
+	background-color: grey;
+	margin:0px;
+	overflow-x: hidden;
+
+
+}
+
+
+.header_grid_container{
+	display: grid;
+	
+	grid-template-rows: 2fr 3fr 10fr;
+	grid-gap: 5px;
+	
+	color:white;
+
+	text-align: center;
+	font-size: 1.5em;
+	height:99.5555vh;
+
+	
+}
+
+.header_sec {
+	display: block;
+	background-position: center;
+	background-size: cover;
+	
+	background-image: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url("images/home/screen.jpg");
+	background-color: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+
+}
+
+.nav_bar{
+	
+	display: grid;
+	background-color: rgba(255,255,255,0.1);
+
+}
+
+.nav_container{
+	display: grid;
+	grid-template-columns: 0.5fr 2fr 2fr 25vw 2fr 2fr 0.5fr;
+	margin: auto 0px;
+	min-width: 600px;
+
+}
+
+.nav_container > div{
+	
+	vertical-align: middle;
+}
+
+.nav_container > div:not(:nth-child(4)){
+	margin: 5px 0px;
+}
+
+.nav_col4{
+	
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.nav_col7 > a> img{
+	width: 25px;
+}
+.nav_col7_img{
+margin: 7px auto;
+}
+
