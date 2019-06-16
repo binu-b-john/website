@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="221" height="76" viewBox="0 0 221 76">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 44px;
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        filter: url(#NUMURO);
+      }
+    </style>
+    <filter id="NUMURO" x="0" y="0" width="221" height="96" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#040202" flood-opacity="0.4"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <text id="NUMURO-2" data-name="NUMURO" class="cls-1" transform="translate(9 53)"><tspan x="0" y="0">NUMURO</tspan></text>
+  </g>
+</svg>

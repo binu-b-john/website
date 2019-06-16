@@ -2,22 +2,23 @@ body{
 	background-color: grey;
 	margin:0px;
 	overflow-x: hidden;
-
+	font-family: SegoeUI-Bold, Segoe UI;
 
 }
+
 
 
 .header_grid_container{
 	display: grid;
 	
-	grid-template-rows: 1.5fr 3fr 10fr;
+	grid-template-rows: 1.5fr 3fr 10fr 1fr;
 	grid-gap: 5px;
 	
 	color:white;
 
 	text-align: center;
 	font-size: 1.5em;
-	height:99.5555vh;
+	height:85vh;
 
 	
 }
@@ -27,7 +28,7 @@ body{
 	background-position: center;
 	background-size: cover;
 	
-	background-image: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url("images/home/screen.jpg");
+	background-image: radial-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url("images/home/screen.jpg");
 	background-color: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
 
 }
@@ -36,34 +37,48 @@ body{
 	
 	display: grid;
 	background-color: rgba(255,255,255,0.1);
+	position: fixed;
+	width:100%;
+	box-shadow: 0 4px 10px -8px black;
 
 }
 
 .nav_container{
 	display: grid;
 	grid-template-columns: 0.5fr 2fr 2fr 25vw 2fr 2fr 0.5fr;
-	margin: auto 0px;
+	grid-template-rows:  1fr 1fr 1fr ;
+	margin: 0px 0px;
+	padding:1vw;
+	place-items: center ;
 
 }
 
-.nav_container > div{
+.nav_container > div >a{
+	text-decoration: none;
+	color:white;
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -1px 15px rgba(255,255,255,0.4);
 	
-	vertical-align: middle;
 }
 
 .nav_container > div:not(:nth-child(4)){
-	margin: 5px 0px;
+	grid-row:2 / span 1;
+	margin: 0vh 0vh;
+	font-size: 1.5vw;
 }
 
 .nav_col4{
-	
+	grid-row:1 / span 4;
+	margin: 0vh auto;
+	padding:2vw;
 	font-weight: bold;
-	font-size: 1.5em;
+	font-size: 3vw;
 }
 .nav_col7 > a> img{
-	width: 25px;
+	width: 2vw;
+
 }
 .nav_col7_img{
-margin: 7px auto;
+	margin: 0vh auto;
 }
 
