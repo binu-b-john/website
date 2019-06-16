@@ -10,7 +10,7 @@ body{
 .header_grid_container{
 	display: grid;
 	
-	grid-template-rows: 2fr 3fr 10fr;
+	grid-template-rows: 1.5fr 3fr 10fr;
 	grid-gap: 5px;
 	
 	color:white;
@@ -43,7 +43,6 @@ body{
 	display: grid;
 	grid-template-columns: 0.5fr 2fr 2fr 25vw 2fr 2fr 0.5fr;
 	margin: auto 0px;
-	min-width: 600px;
 
 }
 
