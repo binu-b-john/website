@@ -444,7 +444,7 @@ body {
 .shot-overlay:before {
   z-index: 1;
   content: '';
-  background-color: rgba(0, 0, 255, .9);
+  background-color: rgba(a6,4a,c9, .9);
 }
 
 .shot-content {
