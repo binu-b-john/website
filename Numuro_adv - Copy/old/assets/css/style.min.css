@@ -88,8 +88,8 @@ a {
 
 a:focus, a:hover {
   transition: all .2s ease-in-out 0s;
-  color: #a64ac9;
-  border-bottom: 1px solid #a64ac9;
+  color: #00f;
+  border-bottom: 1px solid #00f;
 }
 
 .header-logo {
@@ -102,7 +102,7 @@ a:focus, a:hover {
 }
 
 strong {
-  color: #a64ac9;
+  color: #00f;
 }
 
 fieldset, form {
@@ -283,7 +283,7 @@ body {
 .footer-block {
   z-index: 1 !important;
   color: #fff;
-  background-color: #a64ac9;
+  background-color: #00f;
 }
 
 .footer-link-block {
@@ -485,8 +485,8 @@ body {
 
 .accordion-title:focus, .accordion-title:hover {
   transition: all .2s ease-in-out 0s;
-  color: #a64ac9;
-  border-bottom: 1px solid #a64ac9;
+  color: #00f;
+  border-bottom: 1px solid #00f;
 }
 
 .accordion-open {
@@ -580,7 +580,7 @@ body {
 }
 
 .button-learn:focus, .button-learn:hover {
-  color: #a64ac9;
+  color: #00f;
   border: none;
 }
 
@@ -600,7 +600,7 @@ body {
 }
 
 .button-load:focus, .button-load:hover {
-  color: #a64ac9;
+  color: #00f;
   border: none;
 }
 
@@ -902,22 +902,22 @@ body {
   }
   .container.container-small {
     max-width: 100%;
-    padding-right: 45px;
-    padding-left: 55px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
   .container.container-footer {
     max-width: 100%;
-    padding-right: 45px;
-    padding-left: 55px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
   .container.container-copyright {
     max-width: 100%;
-    padding-right: 45px;
-    padding-left: 55px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
   .container.container-header {
-    padding-right: 45px;
-    padding-left: 55px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
   .grid-block {
     padding: 0;
@@ -986,20 +986,20 @@ body {
     display: block;
   }
   .container.container-small {
-    padding-right: 25px;
-    padding-left: 55px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .container.container-footer {
-    padding-right: 25px;
-    padding-left: 55px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .container.container-copyright {
-padding-right: 25px;
-    padding-left: 55px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .container.container-header {
-    padding-right: 25px;
-    padding-left: 55px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
   .column-holder {
     padding: 50px 0 0 0;
