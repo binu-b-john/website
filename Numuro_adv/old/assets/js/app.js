@@ -246,7 +246,7 @@
             });
           } else {
             $body.css({
-              'background-color': '#0000ff'
+              'background-color': '#ffffff'
             });
 
             $block.css('margin-bottom', $footer.innerHeight());
